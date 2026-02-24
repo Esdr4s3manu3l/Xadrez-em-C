@@ -1,82 +1,104 @@
 #include <stdio.h>
 
+// =============================================
+// FUNÇÃO RECURSIVA - TORRE
+// Move para a direita
+// =============================================
+void moverTorre(int casas) {
+    if (casas <= 0) return;   // Caso base
+
+    printf("Direita\n");
+    moverTorre(casas - 1);    // Chamada recursiva
+}
+
+// =============================================
+// FUNÇÃO RECURSIVA - RAINHA
+// Move para a esquerda
+// =============================================
+void moverRainha(int casas) {
+    if (casas <= 0) return;   // Caso base
+
+    printf("Esquerda\n");
+    moverRainha(casas - 1);   // Chamada recursiva
+}
+
+// =============================================
+// FUNÇÃO RECURSIVA + LOOPS ANINHADOS - BISPO
+// Movimento diagonal (Cima + Direita)
+// Loop externo = vertical
+// Loop interno = horizontal
+// =============================================
+void moverBispo(int casas) {
+    if (casas <= 0) return;   // Caso base da recursão
+
+    // Loop externo (vertical)
+    for (int vertical = 1; vertical <= 1; vertical++) {
+
+        // Loop interno (horizontal)
+        for (int horizontal = 1; horizontal <= 1; horizontal++) {
+            printf("Cima\n");
+            printf("Direita\n");
+        }
+    }
+
+    moverBispo(casas - 1);    // Chamada recursiva
+}
+
+// =============================================
+// CAVALO - LOOPS COMPLEXOS
+// Movimento em L:
+// 2 casas para CIMA
+// 1 casa para DIREITA
+// Usa loops aninhados + break + continue
+// =============================================
+void moverCavalo() {
+
+    int movimentosVerticais = 2;
+    int movimentosHorizontais = 1;
+
+    for (int i = 1; i <= movimentosVerticais; i++) {
+
+        if (i == 2) {
+            // Apenas demonstração de controle de fluxo
+            printf("Cima\n");
+            continue;
+        }
+
+        printf("Cima\n");
+    }
+
+    int j = 1;
+
+    while (j <= movimentosHorizontais) {
+
+        if (j > movimentosHorizontais)
+            break;
+
+        printf("Direita\n");
+        j++;
+    }
+}
+
+// =============================================
+// FUNÇÃO PRINCIPAL
+// =============================================
 int main() {
 
-    // =========================================
-    // DEFINIÇÃO DO NÚMERO DE CASAS
-    // =========================================
     int casasTorre = 5;
     int casasBispo = 5;
     int casasRainha = 8;
 
-    int i;
-
-    // =========================================
-    // TORRE - usando FOR
-    // =========================================
     printf("Movimento da Torre:\n");
+    moverTorre(casasTorre);
 
-    for(i = 1; i <= casasTorre; i++) {
-        printf("Direita\n");
-    }
+    printf("\nMovimento do Bispo:\n");
+    moverBispo(casasBispo);
 
-    printf("\n");
+    printf("\nMovimento da Rainha:\n");
+    moverRainha(casasRainha);
 
-    // =========================================
-    // BISPO - usando WHILE
-    // =========================================
-    printf("Movimento do Bispo:\n");
-
-    i = 1;
-    while(i <= casasBispo) {
-        printf("Cima Direita\n");
-        i++;
-    }
-
-    printf("\n");
-
-    // =========================================
-    // RAINHA - usando DO-WHILE
-    // =========================================
-    printf("Movimento da Rainha:\n");
-
-    i = 1;
-    do {
-        printf("Esquerda\n");
-        i++;
-    } while(i <= casasRainha);
-
-    printf("\n");
-
-    // =========================================
-    // CAVALO - usando LOOPS ANINHADOS
-    // Movimento em "L":
-    // 2 casas para BAIXO
-    // 1 casa para ESQUERDA
-    // =========================================
-    printf("Movimento do Cavalo:\n");
-
-    int casasBaixo = 2;
-    int casasEsquerda = 1;
-
-    // Loop externo (obrigatório: FOR)
-    for(i = 1; i <= 1; i++) {
-
-        int contadorBaixo = 1;
-
-        // Loop interno (WHILE)
-        while(contadorBaixo <= casasBaixo) {
-            printf("Baixo\n");
-            contadorBaixo++;
-        }
-
-        int contadorEsquerda = 1;
-
-        while(contadorEsquerda <= casasEsquerda) {
-            printf("Esquerda\n");
-            contadorEsquerda++;
-        }
-    }
+    printf("\nMovimento do Cavalo:\n");
+    moverCavalo();
 
     return 0;
 }
