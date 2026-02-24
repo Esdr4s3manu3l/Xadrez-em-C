@@ -55,7 +55,7 @@ Xadrez-em-C/
 gcc xadrez.c -o xadrez
 ./xadrez
 
-##🧠 Estratégia de Implementação
+## 🧠 Estratégia de Implementação
 
 Torre, Bispo e Rainha implementados com funções recursivas.
 
@@ -65,13 +65,13 @@ Impressão organizada no console para visualização clara dos movimentos.
 
 ---
 
-##📌 Status
+## 📌 Status
 
 ✔ Implementação concluída até o Nível Mestre
 
 ---
 
-#👨‍💻 Autor
+## 👨‍💻 Autor
 
 Desenvolvido por Esdras Emanuel
 Disciplina: Introdução à Programação de Computadores
