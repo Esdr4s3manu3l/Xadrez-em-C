@@ -1,7 +1,7 @@
 
 ---
 
-# ♟ 2️⃣ README – Xadrez em C
+# ♟ – Xadrez em C
 
 ```md
 # ♟ Xadrez em C
@@ -39,3 +39,39 @@ O desenvolvimento foi realizado em níveis progressivos (Novato, Aventureiro e M
 ---
 
 ## 📂 Estrutura do Projeto
+
+
+Xadrez-em-C/
+│
+├── xadrez.c
+└── README.md
+
+
+---
+
+## ▶️ Compilação e Execução
+
+```bash
+gcc xadrez.c -o xadrez
+./xadrez
+
+##🧠 Estratégia de Implementação
+
+Torre, Bispo e Rainha implementados com funções recursivas.
+
+Cavalo implementado com loops complexos e controle refinado de fluxo.
+
+Impressão organizada no console para visualização clara dos movimentos.
+
+---
+
+##📌 Status
+
+✔ Implementação concluída até o Nível Mestre
+
+---
+
+#👨‍💻 Autor
+
+Desenvolvido por Esdras Emanuel
+Disciplina: Introdução à Programação de Computadores
